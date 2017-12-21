@@ -2,39 +2,36 @@
 
 <html>
 	<head>
-		<link rel="stylesheet" href="/main.css" />
-		
-		<!-- Bootstrap css -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-		<!-- jQuery library -->
+		<!-- jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-		<!-- Bootstrap js -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		
-		<!-- Bootstrap treeview -->
+		<!-- Bootstrap css/js -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+			
+		<!-- Treeview css/js -->
 		<link href="/bootstrap-treeview/css/bootstrap-treeview.css" rel="stylesheet">
 		<script src="/bootstrap-treeview/js/bootstrap-treeview.js"></script>
+		
+		<!-- Site css -->
+		<link rel="stylesheet" href="/main.css" />
 	</head>
 	<body>
+		<div class="row banner-row">
+			<div class="col-sm-12 my-div2">
+				<a href="/" class="banner-heading">{{ site.name }}</a>
+				<p>Version 1.0</p>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-sm-3">
 				<div style="margin-top: 20px;">  </div>
-				<div id="treeview1" style="margin-left: 5px;"></div>
-				
-				<!-- <h2>{{ site.data.nav.docs_list_title }}</h2> -->
-				
-				<!--
-				<ul>
-				   {% for item in site.data.nav.docs %}
-					  <li><a href="{{ item.url }}" alt="{{ item.title }}">{{ item.title }}</a></li>
-				   {% endfor %}
-				</ul>
-				-->
+				<div id="treeview1" style="margin-left: 10px;"></div>
 			</div>
 			<div class="col-sm-9">
-				{{ content }}
+				<div class="content-div">
+					{{ content }}
+				</div>
 			</div>			
 		</div>
 		
@@ -44,7 +41,10 @@
 			   {% for item in site.data.nav.docs %}
 			   {
 					text: '{{ item.title }}',
-					href: '{{ item.url }}'{% if item.docs %},
+					href: '{{ item.url }}',
+					state: {
+						selected: (window.location.pathname == '/{{ item.url }}' || window.location.pathname == '{{ item.url }}')
+					}{% if item.docs %},
 					nodes: [
 						{% for subitem in item.docs %} {
 							text: '{{ subitem.title }}',
@@ -57,63 +57,14 @@
 			   {% endfor %}					
 			];
 		
-			/*
-			var defaultData = [
-			  {
-				text: 'Parent 1',
-				href: '#parent1',
-				tags: ['4'],
-				nodes: [
-				  {
-					text: 'Child 1',
-					href: '#child1',
-					tags: ['2'],
-					nodes: [
-					  {
-						text: 'Grandchild 1',
-						href: '#grandchild1',
-						tags: ['0']
-					  },
-					  {
-						text: 'Grandchild 2',
-						href: '#grandchild2',
-						tags: ['0']
-					  }
-					]
-				  },
-				  {
-					text: 'Child 2',
-					href: '#child2',
-					tags: ['0']
-				  }
-				]
-			  },
-			  {
-				text: 'Parent 2',
-				href: '#parent2',
-				tags: ['0']
-			  },
-			  {
-				text: 'Parent 3',
-				href: '#parent3',
-				 tags: ['0']
-			  },
-			  {
-				text: 'Parent 4',
-				href: '#parent4',
-				tags: ['0']
-			  },
-			  {
-				text: 'Parent 5',
-				href: '#parent5'  ,
-				tags: ['0']
-			  }
-			];			
-			*/
-			
 			$('#treeview1').treeview({
 			  data: defaultData,
-			  enableLinks: true
+			  enableLinks: false,
+			  selectedBackColor: '#4276B6',
+			  onNodeSelected: function(event, data) {
+				// alert('Selected!');
+				location.href = data.href;
+			  }
 			});			
 		});
 		</script>

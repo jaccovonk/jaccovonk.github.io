@@ -1,23 +1,25 @@
 
 docs_list_title: ACME Documentation
 docs:
-- title: Introduction
-  url: introduction
+- title: Home
+  url: /
+- title: Overview
+  url: overview
 - title: EA Diagram
   url: ea-diagram
 - title: Entities
   url: entities  
   docs:
   - title: Client
-    url: entities/client
+    url: entity-client
   - title: Fund
-    url: entities/fund
+    url: entity-fund
   - title: Person
-    url: entities/person
+    url: entity-person
+- title: Formats
+  url: formats	
 - title: Examples
   url: examples
-- title: Formats
-  url: formats
-  
+
   
   
