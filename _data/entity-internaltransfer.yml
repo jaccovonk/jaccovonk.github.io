@@ -1,0 +1,19 @@
+
+name: InternalTransfer
+fields:
+- name: Date
+  type: DateTime
+  description: 
+- name: TransferType
+  type: InternalTransferType
+  description: 
+- name: Amount
+  type: decimal
+  description: 
+- name: AmountLeftOver
+  type: decimal
+  description: 
+- name: ToAccountId
+  type: string
+  description: 
+

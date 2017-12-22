@@ -1,0 +1,42 @@
+
+name: Fund
+fields:
+- name: Name
+  type: string
+  description:
+- name: ABN
+  type: string
+  description: 
+- name: FinancialYear
+  type: string
+  description: 
+- name: CommencementDate
+  type: DateTime?
+  description: 
+- name: WindUpDate
+  type: DateTime?
+  description: 
+- name: HasSegregatedAssets
+  type: bool
+  description: 
+- name: HasNonArmsLengthIncome
+  type: bool
+  description: 
+- name: TotalAssetsAt1July
+  type: decimal
+  description: 
+- name: ClosingFundBalance
+  type: decimal
+  description: 
+- name: Persons
+  type: List of Person
+  description: 
+- name: ReserveAccount
+  type: ReserveAccount
+  description: 
+- name: TrusteeType
+  type: TrusteeType
+  description: 
+- name: CorporateTrustee
+  type: CorporateTrustee
+  description: 

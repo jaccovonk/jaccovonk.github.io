@@ -1,0 +1,29 @@
+
+name: Client
+fields:
+- name: FirstName
+  type: string
+  description: First name
+- name: LastName
+  description: Last name (surname)
+  type: string
+- name: CompanyName
+  type: string
+- name: ABN
+  type: string
+- name: PostalAddress1
+  type: string
+- name: PostalAddress2
+  type: string
+- name: Town
+  type: string
+- name: State
+  type: string
+- name: PostCode
+  type: string
+- name: PhoneNumber
+  type: string
+- name: EmailPrimary
+  type: string
+- name: EmailSecondary
+  type: string

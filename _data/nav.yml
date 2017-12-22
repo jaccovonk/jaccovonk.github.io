@@ -16,6 +16,12 @@ docs:
     url: entity-fund
   - title: Person
     url: entity-person
+  - title: Account
+    url: entity-account
+  - title: InternalTransfer
+    url: entity-internaltransfer
+  - title: ExternalTransaction
+    url: entity-externaltransaction
 - title: Formats
   url: formats	
 - title: Examples

@@ -1,0 +1,33 @@
+
+name: Person
+fields:
+- name: FirstName
+  type: string
+  description: 
+- name: MiddleNames
+  type: string
+  description: 
+- name: LastName
+  type: string
+  description: 
+- name: DateOfBirth
+  type: DateTime
+  description: 
+- name: JoinDate
+  type: DateTime?
+  description: 
+- name: ExitDate
+  type: DateTime?
+  description: 
+- name: ExitReason
+  type: ExitReason?
+  description: 
+- name: IsTrusteeOrDirector
+  type: bool
+  description: 
+- name: IsMember
+  type: bool
+  description: 
+- name: Accounts
+  type: List of Account
+  description: 

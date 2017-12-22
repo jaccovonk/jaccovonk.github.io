@@ -1,0 +1,16 @@
+
+name: ExternalTransaction
+fields:
+- name: Date
+  type: DateTime
+  description: 
+- name: TransactionType
+  type: ExternalTransactionType
+  description: 
+- name: Amount
+  type: decimal
+  description: 
+- name: IsAccountEmpty
+  type: bool
+  description: 
+

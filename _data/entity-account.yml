@@ -1,0 +1,22 @@
+
+name: Account
+fields:
+- name: AccountId
+  type: string
+  description: 
+- name: AccountType
+  type: AccountType
+  description: 
+- name: OpeningBalanceAt1July
+  type: decimal
+  description: 
+- name: ClosingBalanceAt30June
+  type: decimal
+  description: 
+- name: InternalTransfers
+  type: List of InternalTransfer
+  description: 
+- name: ExternalTransactions
+  type: List of ExternalTransaction
+  description: 
+
